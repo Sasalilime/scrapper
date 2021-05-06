@@ -4,7 +4,29 @@ const url = 'https://www.cdiscount.com/telephonie/telephone-mobile/apple-iphone-
 
 
 (async () => {
-    const browser = await puppeteer.launch({headless: false});
+    const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();
     await page.goto(url, {waitUntil: "networkidle2"});
+
+
+    //Instructions
+
+    await page.setViewport({
+        width: 1200,
+        height: 800
+    });
+
+    //pdf   => pour les pdf on doit mettre "launch(headleass:true)"
+    await page.pdf({
+        path: 'page.pdf',
+        format: 'a4'
+    })
+
+    //image
+    await page.screenshot({
+        path: 'image.png',
+    })
+
+
+    // await browser.close();
 })();
