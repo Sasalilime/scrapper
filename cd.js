@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const nodemailer = require("nodemailer");
+require('dotenv').config();
 
 
 const url = 'https://www.cdiscount.com/telephonie/telephone-mobile/apple-iphone-12-64go-noir/f-144043129-ap0194252135525.html#mpos=0|cd';
